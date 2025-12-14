@@ -100,7 +100,7 @@ async function queryBalance() {
         balance = ['0', ...balance];
     }
 
-    const [golden, silver, bronze] = balance.map(s => s.trim());
+    const [golden, silver, bronze] = balance.map(s => s.trim().split(/\s+/)).flat();
     msg.push({
         name: "账户余额",
         value: `${golden} 金币，${silver} 银币，${bronze} 铜币`
